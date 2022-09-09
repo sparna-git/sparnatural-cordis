@@ -3,120 +3,85 @@ var sampleQueries = {
 {
   "distinct": true,
   "variables": [
-    "?this"
+    "?this",
+    "?Event_2"
   ],
-  "defaultLang": "fr",
+  "defaultLang": "en",
   "order": null,
   "branches": [
     {
       "line": {
         "s": "?this",
-        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/casting",
-        "o": "?Casting_1",
-        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
-        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasRole_Organization",
+        "o": "?Role_1",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Organisation",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Role",
         "values": []
       },
       "children": [
         {
           "line": {
-            "s": "?Casting_1",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
-            "o": "?CastingDetail_2",
-            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
-            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+            "s": "?Role_1",
+            "p": "https://data.cordis.europa.eu/sparnatural-demo-config/involvedIn_Project",
+            "o": "?Event_2",
+            "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Role",
+            "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Event",
             "values": []
           },
           "children": [
             {
               "line": {
-                "s": "?CastingDetail_2",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
-                "o": "?Medium_3",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
-                "values": [
-                  {
-                    "label": "Violon",
-                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/3573"
-                  }
-                ]
+                "s": "?Event_2",
+                "p": "https://data.cordis.europa.eu/sparnatural-demo-config/isEventOf",
+                "o": "?Project_3",
+                "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Event",
+                "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Project",
+                "values": []
               },
-              "children": []
-            },
-            {
-              "line": {
-                "s": "?CastingDetail_2",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/quantityofmop",
-                "o": "?QuantityOfMop_4",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/QuantityOfMop",
-                "values": [
-                  {
-                    "label": "1",
-                    "regex": "1"
-                  }
-                ]
-              },
-              "children": []
+              "children": [
+                {
+                  "line": {
+                    "s": "?Project_3",
+                    "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasTotalCost",
+                    "o": "?Amount_4",
+                    "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Project",
+                    "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Amount",
+                    "values": [
+                      {
+                        "label": "< 2 million euros",
+                        "regex": "< 2 million euros"
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "line": {
+        "s": "?this",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasSite",
+        "o": "?Site_5",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Organisation",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Site",
+        "values": []
+      },
+      "children": [
         {
           "line": {
-            "s": "?Casting_1",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
-            "o": "?CastingDetail_5",
-            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
-            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-            "values": []
-          },
-          "children": [
-            {
-              "line": {
-                "s": "?CastingDetail_5",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
-                "o": "?Medium_6",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
-                "values": [
-                  {
-                    "label": "Piano",
-                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/2299"
-                  }
-                ]
-              },
-              "children": []
-            },
-            {
-              "line": {
-                "s": "?CastingDetail_5",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/quantityofmop",
-                "o": "?QuantityOfMop_7",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/QuantityOfMop",
-                "values": [
-                  {
-                    "label": "1",
-                    "regex": "1"
-                  }
-                ]
-              },
-              "children": []
-            }
-          ]
-        },
-        {
-          "line": {
-            "s": "?Casting_1",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/numberOfInstrument",
-            "o": "?NumberOfInstrument_8",
-            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
-            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/NumberOfInstrument",
+            "s": "?Site_5",
+            "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasLocation",
+            "o": "?AdministrativeArea_6",
+            "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Site",
+            "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/AdministrativeArea",
             "values": [
               {
-                "label": "2",
-                "literal": "2"
+                "label": "Greece",
+                "regex": "Greece"
               }
             ]
           },
@@ -125,112 +90,94 @@ var sampleQueries = {
       ]
     }
   ]
-},
-	"example.2" :
-{
+} // end example.1 : Organizations from greece participating in Events of Projects of less than 2 million euros
+,
+  "example.2" : {
   "distinct": true,
   "variables": [
-    "?this"
+    "?Role",
+    "?ProjectDivision",
+    "?Project",
+    "?Amount"
   ],
-  "defaultLang": "fr",
+  "defaultLang": "en",
   "order": null,
   "branches": [
     {
       "line": {
-        "s": "?this",
-        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/created_inverse",
-        "o": "?Event_1",
-        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
-        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Event",
+        "s": "?Role",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/roleOf",
+        "o": "?Organisation_1",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Role",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Organisation",
         "values": []
       },
       "children": [
         {
           "line": {
-            "s": "?Event_1",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/acivity",
-            "o": "?Activity_2",
-            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Event",
-            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Activity",
-            "values": []
+            "s": "?Organisation_1",
+            "p": "https://data.cordis.europa.eu/sparnatural-demo-config/legalName_Organization",
+            "o": "?Text_2",
+            "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Organisation",
+            "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Text",
+            "values": [
+              {
+                "label": "Thales",
+                "regex": "Thales"
+              }
+            ]
           },
-          "children": [
-            {
-              "line": {
-                "s": "?Activity_2",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/activity_carriedoutBy",
-                "o": "?Person_3",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Activity",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Person",
-                "values": [
-                  {
-                    "label": "Wolfgang Amadeus Mozart",
-                    "uri": "https://ark.philharmoniedeparis.fr/ark:49250/0055853"
-                  }
-                ]
-              },
-              "children": []
-            }
-          ]
+          "children": []
         }
       ]
     },
     {
       "line": {
-        "s": "?this",
-        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/genre",
-        "o": "?Genre_4",
-        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
-        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Genre",
-        "values": [
-          {
-            "label": "Concerto (1526)",
-            "uri": "https://ark.philharmoniedeparis.fr/ark:49250/0064628"
-          }
-        ]
-      },
-      "children": []
-    },
-    {
-      "line": {
-        "s": "?this",
-        "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/casting",
-        "o": "?Casting_5",
-        "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Partition",
-        "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
+        "s": "?Role",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/involvedIn_Project",
+        "o": "?ProjectDivision",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Role",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/ProjectDivision",
         "values": []
       },
       "children": [
         {
           "line": {
-            "s": "?Casting_5",
-            "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/castingdetail",
-            "o": "?CastingDetail_6",
-            "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Casting",
-            "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
+            "s": "?ProjectDivision",
+            "p": "https://data.cordis.europa.eu/sparnatural-demo-config/isDivisionOf",
+            "o": "?Project",
+            "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/ProjectDivision",
+            "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Project",
             "values": []
           },
-          "children": [
-            {
-              "line": {
-                "s": "?CastingDetail_6",
-                "p": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/medium",
-                "o": "?Medium_7",
-                "sType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/CastingDetail",
-                "oType": "https://data.philharmoniedeparis.fr/partitions/sparnatural-config/Medium",
-                "values": [
-                  {
-                    "label": "Piano",
-                    "uri": "http://www.mimo-db.eu/InstrumentsKeywords/2299"
-                  }
-                ]
-              },
-              "children": []
-            }
-          ]
+          "children": []
+        }
+      ]
+    },
+    {
+      "line": {
+        "s": "?Role",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/isRecipientOf",
+        "o": "?GrantPayment_4",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Role",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/GrantPayment",
+        "values": []
+      },
+      "children": [
+        {
+          "line": {
+            "s": "?GrantPayment_4",
+            "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasPaymentAmount",
+            "o": "?Amount",
+            "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/GrantPayment",
+            "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Amount",
+            "values": []
+          },
+          "children": []
         }
       ]
     }
   ]
 }
+ // end example.2 : Which payment did Thales received, showing for which project division and which project
 };

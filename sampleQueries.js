@@ -180,4 +180,44 @@ var sampleQueries = {
   ]
 }
  // end example.2 : Which payment did Thales received, showing for which project division and which project
+ ,
+"example.3" : {
+  "distinct": true,
+  "variables": [
+    "?this",
+    "?Amount_2"
+  ],
+  "defaultLang": "en",
+  "order": null,
+  "branches": [
+    {
+      "line": {
+        "s": "?this",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasEuroSciVocClassification",
+        "o": "?EuroSciVoc_1",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Project",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/EuroSciVoc",
+        "values": [
+          {
+            "label": "musicology",
+            "uri": "http://data.europa.eu/8mn/euroscivoc/47eb9d78-a29d-4759-8c86-d7d4a8065997"
+          }
+        ]
+      },
+      "children": []
+    },
+    {
+      "line": {
+        "s": "?this",
+        "p": "https://data.cordis.europa.eu/sparnatural-demo-config/hasTotalCost",
+        "o": "?Amount_2",
+        "sType": "https://data.cordis.europa.eu/sparnatural-demo-config/Project",
+        "oType": "https://data.cordis.europa.eu/sparnatural-demo-config/Amount",
+        "values": []
+      },
+      "children": []
+    }
+  ]
+}
+
 };

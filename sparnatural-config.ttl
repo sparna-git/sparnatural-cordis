@@ -1,0 +1,523 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix config-core: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
+@prefix config-datasources: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix this: <https://data.cordis.europa.eu/sparnatural-demo-config/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.cordis.europa.eu/sparnatural-demo-config> a owl:Ontology;
+  rdfs:seeAlso <http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true>,
+    <https://docs.google.com/spreadsheets/d/1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU/export?format=xlsx>;
+  owl:imports <http://data.sparna.fr/ontologies/sparnatural-config-core>, <http://data.sparna.fr/ontologies/sparnatural-config-datasources> .
+
+this:Project a owl:Class;
+  config-core:faIcon "fa-duotone fa-head-side-brain";
+  config-core:order 1;
+  rdfs:label "Project"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Grant a owl:Class;
+  config-core:faIcon "fa-duotone fa-money-check-dollar-pen";
+  rdfs:label "Grant"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:GrantPayment a owl:Class;
+  config-core:faIcon "fa-duotone fa-envelope-open-dollar";
+  rdfs:label "Grant Payment"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:FundingScheme a owl:Class;
+  config-core:faIcon "fa-duotone fa-hand-holding-dollar";
+  rdfs:label "Funding Scheme"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:FundingAgency a owl:Class;
+  config-core:faIcon "fa-duotone fa-building-flag";
+  rdfs:label "Funding Agency"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:ProjectDivision a owl:Class;
+  config-core:faIcon "fa-duotone fa-diagram-subtask";
+  rdfs:label "Workpackage or Task"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Result a owl:Class;
+  config-core:faIcon "fa-duotone fa-file-certificate";
+  rdfs:label "Result"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Event a owl:Class;
+  config-core:faIcon "fa-duotone fa-handshake";
+  rdfs:label "Event"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Role a owl:Class;
+  config-core:faIcon "fa-duotone fa-user-tag";
+  rdfs:label "Role"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Person a owl:Class;
+  config-core:faIcon "fa-duotone fa-person";
+  rdfs:label "Person"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Organisation a owl:Class;
+  config-core:faIcon "fa-duotone fa-building";
+  config-core:sparqlString "<https://data.cordis.eu/ontology#Organization>";
+  rdfs:label "Organisation"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:OrganisationUnit a owl:Class;
+  config-core:faIcon "fa-duotone fa-building";
+  rdfs:label "Organisation Unit"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Site a owl:Class;
+  config-core:faIcon "fa-duotone fa-industry";
+  rdfs:label "Site"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:AdministrativeArea a owl:Class;
+  config-core:faIcon "fa-duotone fa-earth-europe";
+  rdfs:label "Administrative Area"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Country a owl:Class;
+  config-core:faIcon "fa-duotone fa-globe";
+  rdfs:label "Country"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Coordinates a owl:Class;
+  rdfs:label "Coordinates"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:PostalAddress a owl:Class;
+  config-core:faIcon "fa-duotone fa-mailbox";
+  rdfs:label "Postal Address"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:Amount a owl:Class;
+  config-core:faIcon "fa-duotone fa-dollar";
+  rdfs:label "Amount"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Date a owl:Class;
+  config-core:faIcon "fa-duotone fa-calendar-alt";
+  rdfs:label "Date"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Identifier a owl:Class;
+  config-core:faIcon "fa-duotone fa-fingerprint";
+  rdfs:label "Identifier"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Effort a owl:Class;
+  config-core:faIcon "fa-duotone fa-chart-pie-simple";
+  rdfs:label "Effort"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:Text a owl:Class;
+  config-core:faIcon "fa-duotone fa-font-case";
+  rdfs:label "Text"@en;
+  rdfs:subClassOf rdfs:Literal .
+
+this:EuroSciVoc a owl:Class;
+  config-core:faIcon "fa-duotone fa-list-tree";
+  rdfs:label "EuroSciVoc"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:NACE a owl:Class;
+  config-core:faIcon "fa-duotone fa-list-tree";
+  rdfs:label "NACE R2"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:EventType a owl:Class;
+  config-core:faIcon "fa-duotone fa-list-tree";
+  config-core:sparqlString "<http://www.w3.org/2004/02/skos/core#Concept> ; <http://www.w3.org/2004/02/skos/core#inScheme> <http://publications.europa.eu/resource/authority/public-event-type>";
+  rdfs:label "Event type"@en;
+  rdfs:subClassOf config-core:SparnaturalClass .
+
+this:result a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has result"@en;
+  rdfs:range this:Result;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isFundedBy a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "is funded by"@en;
+  rdfs:range this:Grant;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasProjectDivision a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has project division"@en;
+  rdfs:range this:ProjectDivision;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasEvent a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has event"@en;
+  rdfs:range this:Event;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasTotalCost a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has total cost"@en;
+  rdfs:range this:Amount;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+this:hasIdentifier a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has identifier"@en;
+  rdfs:range this:Identifier;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+this:dates a owl:ObjectProperty;
+  rdfs:domain this:Grant, this:Project, this:ProjectDivision;
+  rdfs:label "dates"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf config-core:AutocompleteProperty, config-core:TimeProperty-Date .
+
+this:hasInvolvedParty a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has involved party"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasRelatedProject a owl:ObjectProperty;
+  rdfs:domain this:Project;
+  rdfs:label "has related project"@en;
+  rdfs:range this:Project;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasEuroSciVocClassification a owl:ObjectProperty;
+  config-datasources:treeChildrenDatasource config-datasources:tree_children_skosnarrower;
+  config-datasources:treeRootsDatasource this:tree_root_euroscivoc;
+  rdfs:domain this:Project;
+  rdfs:label "EuroSciVoc classification"@en;
+  rdfs:range this:EuroSciVoc;
+  rdfs:subPropertyOf config-core:TreeProperty .
+
+this:businessSector a owl:ObjectProperty;
+  config-datasources:treeChildrenDatasource this:tree_children_nacer2;
+  config-datasources:treeRootsDatasource this:tree_root_nacer2;
+  rdfs:domain this:Project;
+  rdfs:label "NACE classification"@en;
+  rdfs:range this:NACE;
+  rdfs:subPropertyOf config-core:TreeProperty .
+
+this:hasPayment a owl:ObjectProperty;
+  rdfs:domain this:Grant;
+  rdfs:label "has payment"@en;
+  rdfs:range this:GrantPayment;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isDisbursedBy a owl:ObjectProperty;
+  rdfs:domain this:Grant;
+  rdfs:label "is disbursed by"@en;
+  rdfs:range this:FundingAgency;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasFundingScheme a owl:ObjectProperty;
+  rdfs:domain this:Grant;
+  rdfs:label "has funding scheme"@en;
+  rdfs:range this:FundingScheme;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasFundingAmount a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme, this:Grant;
+  rdfs:label "funding amount"@en, "has funding amount"@en;
+  rdfs:range this:Amount;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:funds a owl:ObjectProperty;
+  rdfs:domain this:Grant;
+  rdfs:label "funds"@en;
+  rdfs:range this:Project;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasBeneficiary a owl:ObjectProperty;
+  rdfs:domain this:Grant;
+  rdfs:label "has beneficiary"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:date a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme, this:GrantPayment;
+  rdfs:label "date"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf config-core:AutocompleteProperty, config-core:TimeProperty-Date .
+
+this:hasPaymentAmount a owl:ObjectProperty;
+  rdfs:domain this:GrantPayment;
+  rdfs:label "has payment amount"@en;
+  rdfs:range this:Amount;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasRecipient a owl:ObjectProperty;
+  rdfs:domain this:GrantPayment;
+  rdfs:label "has recipient"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isPaymentOf a owl:ObjectProperty;
+  rdfs:domain this:GrantPayment;
+  rdfs:label "is payment of"@en;
+  rdfs:range this:Grant;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isImplementedBy a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme;
+  rdfs:label "implemented by"@en;
+  rdfs:range this:FundingAgency;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasSubScheme a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme;
+  rdfs:label "has subscheme"@en;
+  rdfs:range this:FundingScheme;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isSubSchemeOf a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme;
+  rdfs:label "is subscheme of"@en;
+  rdfs:range this:FundingScheme;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasGrant a owl:ObjectProperty;
+  rdfs:domain this:FundingScheme;
+  rdfs:label "has grant"@en;
+  rdfs:range this:Grant;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:implements a owl:ObjectProperty;
+  rdfs:domain this:FundingAgency;
+  rdfs:label "implements"@en;
+  rdfs:range this:FundingScheme;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:disburses a owl:ObjectProperty;
+  rdfs:domain this:FundingAgency;
+  rdfs:label "disburses"@en;
+  rdfs:range this:Grant;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasResult a owl:ObjectProperty;
+  rdfs:domain this:ProjectDivision;
+  rdfs:label "has result"@en;
+  rdfs:range this:Result;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasSubdivision a owl:ObjectProperty;
+  rdfs:domain this:ProjectDivision;
+  rdfs:label "has subdivision (task)"@en;
+  rdfs:range this:ProjectDivision;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isDivisionOf a owl:ObjectProperty;
+  rdfs:domain this:ProjectDivision;
+  rdfs:label "is division of"@en;
+  rdfs:range this:Project;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:involvedParty a owl:ObjectProperty;
+  rdfs:domain this:ProjectDivision;
+  rdfs:label "involved party"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:personMonth a owl:ObjectProperty;
+  rdfs:domain this:ProjectDivision;
+  rdfs:label "person month"@en;
+  rdfs:range this:Effort;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+this:publishedYear a owl:ObjectProperty;
+  rdfs:domain this:Result;
+  rdfs:label "published year"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf config-core:TimeProperty-Year .
+
+this:isResultOf a owl:ObjectProperty;
+  rdfs:domain this:Result;
+  rdfs:label "is result of"@en;
+  rdfs:range this:Project, this:ProjectDivision;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:date_Event a owl:ObjectProperty;
+  rdfs:domain this:Event;
+  rdfs:label "date"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf config-core:TimeProperty-Date .
+
+this:isHeldAt a owl:ObjectProperty;
+  rdfs:domain this:Event;
+  rdfs:label "is held at"@en;
+  rdfs:range this:Site;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasRelatedEvent a owl:ObjectProperty;
+  rdfs:domain this:Event;
+  rdfs:label "has related event"@en;
+  rdfs:range this:Event;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isEventOf a owl:ObjectProperty;
+  rdfs:domain this:Event;
+  rdfs:label "is event of"@en;
+  rdfs:range this:Project;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasEventType a owl:ObjectProperty;
+  config-datasources:datasource this:list_range-based_skosprefLabel_alpha;
+  rdfs:domain this:Event;
+  rdfs:label "has event type"@en;
+  rdfs:range this:EventType;
+  rdfs:subPropertyOf config-core:ListProperty .
+
+this:involvedIn_Project a owl:ObjectProperty;
+  rdfs:domain this:Role;
+  rdfs:label "is involved in"@en;
+  rdfs:range this:Event, this:Project, this:ProjectDivision;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:beneficiaryOf a owl:ObjectProperty;
+  rdfs:domain this:Role;
+  rdfs:label "is beneficiary of"@en;
+  rdfs:range this:Grant;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:roleOf a owl:ObjectProperty;
+  rdfs:domain this:Role;
+  rdfs:label "role of"@en;
+  rdfs:range this:Organisation, this:Person;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:dates_Role a owl:ObjectProperty;
+  rdfs:domain this:Role;
+  rdfs:label "date"@en;
+  rdfs:range this:Date;
+  rdfs:subPropertyOf config-core:TimeProperty-Date .
+
+this:isRecipientOf a owl:ObjectProperty;
+  rdfs:domain this:Role;
+  rdfs:label "is recipent of"@en;
+  rdfs:range this:GrantPayment;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasRole_Person a owl:ObjectProperty;
+  rdfs:domain this:Person;
+  rdfs:label "has role"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasSite a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "has site"@en;
+  rdfs:range this:Site;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasUnit a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "has unit"@en;
+  rdfs:range this:OrganisationUnit;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasSubOrganisation a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "has sub-organisation"@en;
+  rdfs:range this:Organisation;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:isSubOrganisationOf a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "is sub-organisation of"@en;
+  rdfs:range this:Organisation;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:employs a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "employs"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:hasRole_Organization a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "has role"@en;
+  rdfs:range this:Role;
+  rdfs:subPropertyOf config-core:AutocompleteProperty .
+
+this:legalName_Organization a owl:ObjectProperty;
+  rdfs:domain this:Organisation;
+  rdfs:label "legal name"@en;
+  rdfs:range this:Text;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+this:hasLocation a owl:ObjectProperty;
+  rdfs:domain this:Site;
+  rdfs:label "has location"@en;
+  rdfs:range this:AdministrativeArea;
+  rdfs:subPropertyOf config-core:SearchProperty .
+
+this:list_skosxlprefLabel_alpha_with_count a config-datasources:SparqlDatasource;
+  config-datasources:labelPath "<http://www.w3.org/2008/05/skos-xl#prefLabel>/<http://www.w3.org/2008/05/skos-xl#literalForm>";
+  config-datasources:queryTemplate config-datasources:query_list_label_alpha_with_count .
+
+this:list_range-based_skosprefLabel_alpha a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?uri ?label WHERE {
+ ?uri a $range .
+ ?uri skos:prefLabel ?label .
+ FILTER(lang(?label) = $lang)
+}""" .
+
+this:tree_root_euroscivoc a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?uri ?label WHERE {
+ ?uri skos:topConceptOf <http://data.europa.eu/8mn/euroscivoc/40c0f173-baa3-48a3-9fe6-d6e8fb366a00> .
+ ?uri skosxl:prefLabel/skosxl:literalForm ?theLabel .
+ FILTER(lang(?theLabel) = $lang)
+ BIND(?theLabel AS ?label)
+}
+ORDER BY ?label""" .
+
+this:tree_root_nacer2 a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?uri ?label WHERE {
+ ?uri skos:topConceptOf <http://stamina-project.org/codes/nacer2/nace> .
+ ?uri skos:prefLabel ?theLabel .
+ ?uri skos:notation ?code .
+ FILTER(lang(?theLabel) = $lang)
+ BIND(CONCAT(STR(?code),\" - \", ?theLabel) AS ?label)
+}
+ORDER BY ?label""" .
+
+this:tree_children_nacer2 a config-datasources:SparqlDatasource;
+  config-datasources:queryString """PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT DISTINCT ?uri ?label WHERE {
+ ?uri skos:broader|^skos:narrower $node .
+ ?uri skos:prefLabel ?theLabel .
+ ?uri skos:notation ?code .
+ FILTER(lang(?theLabel) = $lang)
+ BIND(CONCAT(STR(?code),\" - \", ?theLabel) AS ?label)
+}
+ORDER BY ?label""" .

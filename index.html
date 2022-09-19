@@ -111,6 +111,7 @@
                   <option value="none" data-i18n="example.placeholder" selected></option>
                   <option value="example.1">Organisations from Greece that participated in Events of Projects of less than 2 million euros</option>
                   <option value="example.2">Which payment did Thales received, showing for which project division and which project</option>
+                  <option value="example.3">Amounts of projects in the musicology EuroSciVoc field</option>
                 </select>
               </div>
             </form>
@@ -119,7 +120,8 @@
           <div class="col-md-6">
             <div style="text-align:right;">
               <span style="font-size:90%; font-style: italic;"> 
-                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="http://graphdb.sparna.fr/repositories/cordis">http://graphdb.sparna.fr/repositories/cordis</a>| config in <a href="https://docs.google.com/spreadsheets/d/1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU">https://docs.google.com/spreadsheets/d/1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU</a>
+                   <span data-i18n="endpoint.querying"></span> <a id="endpoint" href="http://graphdb.sparna.fr/repositories/cordis">http://graphdb.sparna.fr/repositories/cordis</a>
+                   <!--| config in <a href="https://docs.google.com/spreadsheets/d/1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU">https://docs.google.com/spreadsheets/d/1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU</a> -->
               </span>
             </div>
           </div>
@@ -329,7 +331,8 @@
       $( document ).ready(function($) {          
 
         sparnatural = document.getElementById('sparnatural-container').Sparnatural({
-          config: "http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          // config: "http://xls2rdf.sparna.fr/rest/convert?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1YA7MFl3Nk3TP-qRubgo5ZAU37keqg-SG8r3BdKPtNwU%2Fexport%3Fformat%3Dxlsx&noPostProcessings=true",
+          config: "sparnatural-config.ttl",
           language: lang,
           maxDepth: 5,                                                                        
           addDistinct: true,

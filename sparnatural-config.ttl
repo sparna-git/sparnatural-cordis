@@ -192,7 +192,7 @@ this:dates a owl:ObjectProperty;
   rdfs:domain this:Grant, this:Project, this:ProjectDivision;
   rdfs:label "dates"@en;
   rdfs:range this:Date;
-  rdfs:subPropertyOf config-core:AutocompleteProperty, config-core:TimeProperty-Date .
+  rdfs:subPropertyOf config-core:TimeProperty-Date .
 
 this:hasInvolvedParty a owl:ObjectProperty;
   rdfs:domain this:Project;
@@ -262,7 +262,7 @@ this:date a owl:ObjectProperty;
   rdfs:domain this:FundingScheme, this:GrantPayment;
   rdfs:label "date"@en;
   rdfs:range this:Date;
-  rdfs:subPropertyOf config-core:AutocompleteProperty, config-core:TimeProperty-Date .
+  rdfs:subPropertyOf config-core:TimeProperty-Date .
 
 this:hasPaymentAmount a owl:ObjectProperty;
   rdfs:domain this:GrantPayment;
